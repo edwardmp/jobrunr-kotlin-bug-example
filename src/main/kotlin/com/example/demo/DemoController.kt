@@ -12,11 +12,10 @@ class DemoController(
     private val demoClass: DemoClass,
 ) {
     fun enqueueJob() {
-        val obj = DemoObject(firstUuid = UUID.randomUUID(), secondUuid = UUID.randomUUID(), someLong = 0L, someOtherLong = 0L)
-        val firstVar = obj.someLong
-        val secondVar = obj.someOtherLong
+        val obj =
+            DemoObject(firstUuid = UUID.randomUUID(), secondUuid = UUID.randomUUID(), someLong = 0L, someOtherLong = 0L)
         jobScheduler.enqueue {
-            demoClass.myFunc(first = obj.firstUuid, second = obj.secondUuid, third = firstVar, fourth = secondVar)
+            demoClass.myFunc(first = obj.firstUuid)
         }
     }
 
@@ -28,7 +27,7 @@ class DemoController(
 
 @Component
 class DemoClass {
-    fun myFunc(first: UUID, second: UUID, third: Long, fourth: Long) {
+    fun myFunc(first: UUID, second: Boolean = false) {
         println("Hello")
     }
 }

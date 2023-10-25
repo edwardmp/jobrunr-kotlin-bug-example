@@ -23,7 +23,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-	implementation("org.jobrunr:jobrunr-spring-boot-2-starter:6.1.3")
+	implementation("org.jobrunr:jobrunr-spring-boot-2-starter:6.3.2")
 	implementation("org.postgresql:postgresql")
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-web")
